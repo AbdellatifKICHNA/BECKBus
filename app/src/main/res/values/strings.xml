@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">BECK Bus</string>
+
+    <string-array name="cycle">
+        <item>Licence</item>
+        <item>Master</item>
+        <item>Doctorat</item>
+    </string-array>
+
+    <string-array name="station">
+        <item>Riad Salam</item>
+        <item>Ouled Ayad</item>
+        <item>Ouled Hamdane 1</item>
+        <item>Ouled Hamdane 2</item>
+        <item>Services des mines</item>
+        <item>Gharnata</item>
+        <item>total</item>
+        <item>tadla pharm</item>
+        <item>Amiral</item>
+        <item>Qods</item>
+        <item>Taqqadom</item>
+        <item>ISTA</item>
+        <item>Mghila</item>
+    </string-array>
+
+    <string-array name="NbrBus">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string name="title_activity_principal">PrincipalActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">BECK Bus</string>
+    <string name="nav_header_subtitle">Number One BUS</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_logout">Déconnexion</string>
+</resources>

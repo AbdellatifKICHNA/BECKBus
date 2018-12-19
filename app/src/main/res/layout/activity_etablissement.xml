@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".EtablissementActivity">
+
+    <TextView
+        android:id="@+id/poste"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="Poste Maroc"
+        android:textAlignment="center"
+        android:textSize="40dp"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:background="#fff"/>
+
+    <TextView
+        android:id="@+id/tres"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="Trésorerie"
+        android:textAlignment="center"
+        android:textSize="40dp"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:background="#000"/>
+
+    <TextView
+        android:id="@+id/pref"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="Prefecture"
+        android:textAlignment="center"
+        android:textSize="40dp"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:background="#fff"/>
+
+    <TextView
+        android:id="@+id/fac"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="Facultés"
+        android:textAlignment="center"
+        android:textSize="40dp"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:background="#000" />
+</LinearLayout>

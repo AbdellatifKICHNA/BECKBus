@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".HorairesActivity">
+
+
+    <TextView
+        android:id="@+id/depart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Station de départ"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:padding="6dp"
+        android:layout_marginTop="60dp"
+        android:textColor="#000"
+        />
+
+    <android.support.v7.widget.AppCompatSpinner
+        android:id="@+id/depart_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="5dp"
+        android:padding="10dp"
+        android:layout_below="@+id/depart"
+        android:entries="@array/station"/>
+
+    <TextView
+        android:id="@+id/arrivee"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/depart"
+        android:text="Station d'arrivée"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:padding="6dp"
+        android:layout_marginTop="90dp"
+        android:textColor="#000"
+        />
+
+    <android.support.v7.widget.AppCompatSpinner
+        android:id="@+id/arrivee_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="5dp"
+        android:padding="10dp"
+        android:layout_below="@+id/arrivee"
+        android:entries="@array/station" />
+
+    <Button
+        android:id="@+id/rechercher_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rechercher"
+        android:background="#0955A8"
+        android:layout_below="@id/arrivee"
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:textStyle="italic"
+        android:textSize="25sp"
+        android:layout_marginStart="80dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginTop="100dp"
+        android:padding="5dp"
+        android:textAllCaps="false"/>
+
+    <TableLayout
+        android:id="@+id/table_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="100dp"
+        android:visibility="invisible">
+
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:id="@+id/table_row1"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/depart1"
+                android:textAlignment="center"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:textColor="#000"
+                android:text="Départ"
+                android:textSize="20dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/arrivee1"
+                android:textColor="#000"
+                android:textAlignment="center"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:text="Arrivée"
+                android:textSize="20dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:textColor="#000"
+                android:id="@+id/ligne1"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:textAlignment="center"
+                android:layout_weight="1"
+                android:text="Ligne"
+                android:textSize="20dp"
+                android:textStyle="bold"/>
+        </TableRow>
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:id="@+id/table_row2"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/depart2"
+                android:textAlignment="center"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:textColor="#000"
+                android:text="07:15"
+                android:textSize="17dp"/>
+            <TextView
+                android:id="@+id/arrivee2"
+                android:textColor="#000"
+                android:textAlignment="center"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:text="07:45"
+                android:textSize="17dp"/>
+            <TextView
+                android:textColor="#000"
+                android:id="@+id/ligne2"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:textAlignment="center"
+                android:layout_weight="1"
+                android:text="01"
+                android:textSize="17dp"/>
+        </TableRow>
+    </TableLayout>
+
+
+</RelativeLayout>

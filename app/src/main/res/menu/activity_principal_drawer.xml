@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/ligne_tarif"
+            android:icon="@drawable/ic_baseline_directions_bus_24px"
+            android:title="Lignes et Tarifs" />
+        <item
+            android:id="@+id/horaire"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Horaires" />
+        <item
+            android:id="@+id/abonnements"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Abonnements" />
+        <item
+            android:id="@+id/info"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Informations" />
+        <item
+            android:id="@+id/etab_pub"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Etablissement publiques" />
+        <item
+            android:id="@+id/reserve"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Réservation de bus" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Send" />
+        </menu>
+    </item>
+
+</menu>
