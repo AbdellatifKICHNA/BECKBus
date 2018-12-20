@@ -12,7 +12,7 @@ tools:context=".HorairesActivity">
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Station de départ"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textStyle="bold"
         android:textAlignment="center"
         android:padding="6dp"
@@ -36,7 +36,7 @@ tools:context=".HorairesActivity">
         android:layout_height="wrap_content"
         android:layout_below="@id/depart"
         android:text="Station d'arrivée"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textStyle="bold"
         android:textAlignment="center"
         android:padding="6dp"
@@ -95,7 +95,7 @@ tools:context=".HorairesActivity">
                 android:layout_weight="1"
                 android:textColor="#000"
                 android:text="Départ"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:textStyle="bold"/>
             <TextView
                 android:id="@+id/arrivee1"
@@ -105,7 +105,7 @@ tools:context=".HorairesActivity">
                 android:layout_width="match_parent"
                 android:layout_weight="1"
                 android:text="Arrivée"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:textStyle="bold"/>
             <TextView
                 android:textColor="#000"
@@ -115,7 +115,7 @@ tools:context=".HorairesActivity">
                 android:textAlignment="center"
                 android:layout_weight="1"
                 android:text="Ligne"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:textStyle="bold"/>
         </TableRow>
         <TableRow
@@ -132,7 +132,7 @@ tools:context=".HorairesActivity">
                 android:layout_weight="1"
                 android:textColor="#000"
                 android:text="07:15"
-                android:textSize="17dp"/>
+                android:textSize="17sp"/>
             <TextView
                 android:id="@+id/arrivee2"
                 android:textColor="#000"
@@ -141,7 +141,7 @@ tools:context=".HorairesActivity">
                 android:layout_width="match_parent"
                 android:layout_weight="1"
                 android:text="07:45"
-                android:textSize="17dp"/>
+                android:textSize="17sp"/>
             <TextView
                 android:textColor="#000"
                 android:id="@+id/ligne2"
@@ -150,7 +150,7 @@ tools:context=".HorairesActivity">
                 android:textAlignment="center"
                 android:layout_weight="1"
                 android:text="01"
-                android:textSize="17dp"/>
+                android:textSize="17sp"/>
         </TableRow>
     </TableLayout>
 

@@ -6,27 +6,27 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/ligne_tarif"
-            android:icon="@drawable/ic_baseline_directions_bus_24px"
+            android:icon="@drawable/bus1"
             android:title="Lignes et Tarifs" />
         <item
             android:id="@+id/horaire"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/horaire"
             android:title="Horaires" />
         <item
             android:id="@+id/abonnements"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/abonnement"
             android:title="Abonnements" />
         <item
             android:id="@+id/info"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/info"
             android:title="Informations" />
         <item
             android:id="@+id/etab_pub"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/etablissement"
             android:title="Etablissement publiques" />
         <item
             android:id="@+id/reserve"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/reserve"
             android:title="Réservation de bus" />
     </group>
 

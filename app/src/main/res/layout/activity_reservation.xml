@@ -14,7 +14,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:text="Nombre de bus (Max. 3)"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textColor="#000"
         android:textStyle="bold"/>
 
@@ -36,7 +36,7 @@
         android:layout_marginTop="50dp"
         android:text="Date"
         android:layout_below="@+id/NbrBus_spinner"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textColor="#000"
         android:textStyle="bold"/>
 
@@ -61,7 +61,7 @@
         android:layout_below="@id/date_choose"
         android:background="#0955A8"
         android:text="Réserver"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textColor="#fff"
         android:textStyle="bold"/>
 

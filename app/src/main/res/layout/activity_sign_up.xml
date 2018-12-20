@@ -27,7 +27,7 @@
                 android:layout_height="210dp"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
-                app:srcCompat="@drawable/bus" />
+                app:srcCompat="@drawable/buslogo" />
 
             <EditText
                 android:id="@+id/register_email"
@@ -35,6 +35,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/beck_bus_logo"
                 android:layout_alignParentStart="true"
+                android:layout_marginTop="40dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:drawableStart="@drawable/email"

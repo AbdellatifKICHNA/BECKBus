@@ -25,6 +25,7 @@
         android:layout_height="419dp"
         android:layout_width="wrap_content"/>
 
+
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
@@ -37,5 +38,7 @@
         android:id="@+id/mapView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+
 
 </android.support.design.widget.CoordinatorLayout>
