@@ -130,14 +130,4 @@
         </TableRow>
     </TableLayout>
 
-    <ImageView
-        android:id="@+id/beck_bus_logo"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_below="@id/table_layout"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="312dp"
-        app:srcCompat="@drawable/buslogo" />
-
 </RelativeLayout>

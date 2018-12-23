@@ -105,18 +105,17 @@ public class PrincipalActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.ligne_tarif) {
-            // Handle the camera action
+        if (id == R.id.lignes) {
             Intent ligneIntent = new Intent(PrincipalActivity.this, LignesActivity.class);
             startActivity(ligneIntent);
+        } else if (id == R.id.tarifs) {
+
         } else if (id == R.id.horaire) {
             Intent horaireIntent = new Intent(PrincipalActivity.this, HorairesActivity.class);
             startActivity(horaireIntent);
-
-        } else if (id == R.id.abonnements) {
+        }else if (id == R.id.abonnements) {
 
         } else if (id == R.id.info) {
 

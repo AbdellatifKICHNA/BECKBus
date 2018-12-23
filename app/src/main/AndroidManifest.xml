@@ -37,7 +37,8 @@
             android:name=".LignesActivity"
             android:label="Lignes et Tarifs" />
         <activity android:name=".EtablissementActivity" />
-        <activity android:name=".ReservationActivity"></activity>
+        <activity android:name=".ReservationActivity" />
+        <activity android:name=".TarifsActivity"></activity>
     </application>
 
 </manifest>

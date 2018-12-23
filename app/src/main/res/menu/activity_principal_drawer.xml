@@ -5,9 +5,13 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/ligne_tarif"
+            android:id="@+id/lignes"
             android:icon="@drawable/bus1"
-            android:title="Lignes et Tarifs" />
+            android:title="Lignes" />
+        <item
+            android:id="@+id/tarifs"
+            android:icon="@drawable/money"
+            android:title="Tarifs" />
         <item
             android:id="@+id/horaire"
             android:icon="@drawable/horaire"
