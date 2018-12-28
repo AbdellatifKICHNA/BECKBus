@@ -111,20 +111,23 @@ public class PrincipalActivity extends AppCompatActivity
             Intent ligneIntent = new Intent(PrincipalActivity.this, LignesActivity.class);
             startActivity(ligneIntent);
         } else if (id == R.id.tarifs) {
-
+            Intent tarifIntent = new Intent(PrincipalActivity.this, TarifsActivity.class);
+            startActivity(tarifIntent);
         } else if (id == R.id.horaire) {
             Intent horaireIntent = new Intent(PrincipalActivity.this, HorairesActivity.class);
             startActivity(horaireIntent);
         }else if (id == R.id.abonnements) {
-
+            Intent abonnementIntent = new Intent(PrincipalActivity.this, AbonnementActivity.class);
+            startActivity(abonnementIntent);
         } else if (id == R.id.info) {
-
+            Intent infoIntent = new Intent(PrincipalActivity.this, InformationsActivity.class);
+            startActivity(infoIntent);
         } else if (id == R.id.etab_pub) {
             Intent etablissementIntent = new Intent(PrincipalActivity.this, EtablissementActivity.class);
             startActivity(etablissementIntent);
         } else if (id == R.id.reserve) {
-            Intent etablissementIntent = new Intent(PrincipalActivity.this, ReservationActivity.class);
-            startActivity(etablissementIntent);
+            Intent reserveIntent = new Intent(PrincipalActivity.this, ReservationActivity.class);
+            startActivity(reserveIntent);
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {

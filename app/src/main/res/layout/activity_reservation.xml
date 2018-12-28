@@ -20,7 +20,7 @@
 
     <android.support.v7.widget.AppCompatSpinner
         android:id="@+id/NbrBus_spinner"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:layout_marginTop="10dp"
@@ -33,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:text="Date"
         android:layout_below="@+id/NbrBus_spinner"
         android:textSize="20sp"
@@ -42,23 +42,69 @@
 
     <EditText
         android:id="@+id/date_choose"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/date"
         android:layout_marginTop="10dp"
-        android:layout_alignStart="@+id/Nbr_bus"
+        android:layout_centerHorizontal="true"
         android:ems="10"
         android:hint="ex: 23/01/2018"
         android:textAlignment="center"
         android:inputType="date" />
 
+    <TextView
+        android:id="@+id/de"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_toStartOf="@+id/res_dep"
+        android:text="De"
+        android:layout_below="@+id/date_choose"
+        android:textSize="20sp"
+        android:textColor="#000"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/res_dep"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/date_choose"
+        android:hint="départ"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/vers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_toStartOf="@+id/res_arr"
+        android:text="vers"
+        android:layout_below="@+id/de"
+        android:textSize="20sp"
+        android:textColor="#000"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/res_arr"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/res_dep"
+        android:hint="arrivée"
+        android:textAlignment="center"/>
+
     <Button
         android:id="@+id/reserve_btn"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
-        android:layout_below="@id/date_choose"
+        android:layout_below="@id/res_arr"
         android:background="#0955A8"
         android:text="Réserver"
         android:textSize="20sp"

@@ -37,4 +37,7 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
     <string name="action_logout">Déconnexion</string>
+    <string name="info_text">BECK Bus© est une compagnie de bus marocaine créée en 2018 spécialisée dans le transport de voyageurs au niveau de la région \nBéni Mellal - Khénifra.</string>
+    <string name="abonnement_talib">L\'abonnement \'Talib\' vous permet de voyager de façon illimitée en ne payant que 80Dhs/Ligne.</string>
+    <string name="facultes">Facultés</string>
 </resources>

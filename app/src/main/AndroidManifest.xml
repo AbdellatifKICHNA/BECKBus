@@ -35,10 +35,15 @@
             android:label="Horaires" />
         <activity
             android:name=".LignesActivity"
-            android:label="Lignes et Tarifs" />
+            android:label="Lignes" />
         <activity android:name=".EtablissementActivity" />
         <activity android:name=".ReservationActivity" />
-        <activity android:name=".TarifsActivity"></activity>
+        <activity
+            android:name=".TarifsActivity"
+            android:label="Tarifs" />
+        <activity android:name=".InformationsActivity" />
+        <activity android:name=".AbonnementActivity"
+            android:label="Abonnement"></activity>
     </application>
 
 </manifest>
