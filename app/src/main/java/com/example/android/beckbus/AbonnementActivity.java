@@ -119,6 +119,7 @@ public class AbonnementActivity extends AppCompatActivity {
                                 bitmap = TextToImageEncode(etatAbonne);
 
                                 ImageQR.setImageBitmap(bitmap);
+                                ImageQR.setVisibility(View.VISIBLE);
 
 
                             } catch (WriterException e) {
