@@ -1,27 +1,23 @@
 <resources>
     <string name="app_name">BECK Bus</string>
 
-    <string-array name="cycle">
-        <item>Licence</item>
-        <item>Master</item>
-        <item>Doctorat</item>
-    </string-array>
 
     <string-array name="station">
-        <item>Riad Salam</item>
-        <item>Ouled Ayad</item>
-        <item>Ouled Hamdane 1</item>
-        <item>Ouled Hamdane 2</item>
-        <item>Services des mines</item>
-        <item>Gharnata</item>
-        <item>total</item>
-        <item>tadla pharm</item>
-        <item>Amiral</item>
-        <item>Qods</item>
-        <item>Taqqadom</item>
-        <item>ISTA</item>
-        <item>Mghila</item>
+        <item>Riad Salam - Béni Mellal</item>
+        <item>Ait Tislit - Béni Mellal</item>
+        <item>Bradia - Béni Mellal</item>
+        <item>Afourar - Béni Mellal</item>
+        <item>Tagzert - Béni Mellal</item>
+        <item>Fquih Ben Salah - Béni Mellal</item>
+        <item>El Ksiba - Béni Mellal</item>
+        <item>Sidi Jaber - Béni Mellal</item>
+        <item>Ouled Ayad - Béni Mellal</item>
+        <item>Foum Al Enser - Béni Mellal</item>
+        <item>Zaouih Chikh - Béni Mellal</item>
+        <item>Mghila - Béni Mellal</item>
+        <item>Ouled Hamdan - Béni Mellal</item>
     </string-array>
+
 
     <string-array name="NbrBus">
         <item>1</item>
@@ -29,15 +25,33 @@
         <item>3</item>
     </string-array>
 
+    <string-array name="utilisateur">
+        <item>Chauffeur</item>
+        <item>Passager</item>
+    </string-array>
+
+    <string-array name="Anomalie">
+        <item>Choisir une anomalie</item>
+        <item>Retard ou Avance</item>
+        <item>Point d\'arrêt non respecté</item>
+        <item>Comportement du conducteur</item>
+        <item>Surcharge</item>
+        <item>Etat du véhicule</item>
+        <item>Autre ...</item>
+    </string-array>
+
+
     <string name="title_activity_principal">PrincipalActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">BECK Bus</string>
     <string name="nav_header_subtitle">Number One BUS</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Mon profil</string>
     <string name="action_logout">Déconnexion</string>
     <string name="info_text">BECK Bus© est une compagnie de bus marocaine créée en 2018 spécialisée dans le transport de voyageurs au niveau de la région \nBéni Mellal - Khénifra.</string>
     <string name="abonnement_talib">L\'abonnement \'Talib\' vous permet de voyager de façon illimitée en ne payant que 80Dhs/Ligne.</string>
+    <string name="abonnement_mowadaf">L\'abonnement \'Mowadaf\' vous permet de voyager de façon illimitée en ne payant que 100Dhs/Ligne.</string>
+    <string name="texte_rdv">Votre Rendez-Vous est programmé le :</string>
     <string name="facultes">Facultés</string>
 </resources>

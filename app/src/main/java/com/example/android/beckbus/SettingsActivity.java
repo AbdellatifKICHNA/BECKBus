@@ -5,10 +5,14 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -20,17 +24,19 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.lang.reflect.Array;
 import java.util.HashMap;
 
 public class SettingsActivity extends AppCompatActivity {
 
-    private Button UpdateAccountSettings;
-    private EditText userNom, userPrenom, userAge;
+    private Button Modifier;
+    private EditText userNom, userPrenom, userAge, CINValue;
+    private TextView CINText, statutView;
     private String currentUserID;
+
     private FirebaseAuth mAuth;
     private DatabaseReference RootRef;
 
-    private Spinner userCycle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,42 +47,95 @@ public class SettingsActivity extends AppCompatActivity {
         currentUserID = mAuth.getCurrentUser().getUid();
         RootRef = FirebaseDatabase.getInstance().getReference();
 
-        UpdateAccountSettings = (Button) findViewById(R.id.update_settings_button);
-        userNom = (EditText) findViewById(R.id.set_last_name);
-        userPrenom = (EditText) findViewById(R.id.set_first_name);
-        userAge = (EditText) findViewById(R.id.set_user_age);
+        Modifier = (Button) findViewById(R.id.valider_button);
+        userNom = (EditText) findViewById(R.id.set_nom);
+        userPrenom = (EditText) findViewById(R.id.set_prenom);
+        userAge = (EditText) findViewById(R.id.set_age);
+        CINValue = (EditText) findViewById(R.id.cin_value);
+        CINText = (TextView) findViewById(R.id.cin_text);
+        statutView = (TextView) findViewById(R.id.set_status);
 
-        userCycle = (Spinner) findViewById(R.id.chooser_spinner);
+        setStatut();
 
-        UpdateAccountSettings.setOnClickListener(new View.OnClickListener() {
+        Modifier.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 UpdateSettings();
             }
         });
-
         RetrieveUserInfo();
-
     }
 
     private void RetrieveUserInfo() {
-        RootRef.child("Etudiants").child(currentUserID).addValueEventListener(new ValueEventListener() {
+        RootRef.child("Utilisateurs").child("Chauffeurs").child(currentUserID).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if ((dataSnapshot.exists()) && (dataSnapshot.hasChild("nom"))){
                     String retrieveUserNom = dataSnapshot.child("nom").getValue().toString();
                     String retrieveUserPrenom = dataSnapshot.child("prenom").getValue().toString();
                     String retrieveAge = dataSnapshot.child("age").getValue().toString();
-                    String retrieveCycle = dataSnapshot.child("cycle").getValue().toString();
+                    String retrieveCIN = dataSnapshot.child("CIN").getValue().toString();
 
                     userNom.setText(retrieveUserNom);
                     userPrenom.setText(retrieveUserPrenom);
                     userAge.setText(retrieveAge);
-                    //userCycle.setSelection();
+                    CINValue.setText(retrieveCIN);
 
                 }
                 else{
-                    Toast.makeText(SettingsActivity.this, "Please set and update your profile information", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SettingsActivity.this, "Veuillez Compléter votre profil!", Toast.LENGTH_SHORT).show();
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+        RootRef.child("Utilisateurs").child("Passagers").child("Fonctionnaires").child(currentUserID).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if ((dataSnapshot.exists()) && (dataSnapshot.hasChild("nom"))){
+                    String retrieveUserNom = dataSnapshot.child("nom").getValue().toString();
+                    String retrieveUserPrenom = dataSnapshot.child("prenom").getValue().toString();
+                    String retrieveAge = dataSnapshot.child("age").getValue().toString();
+                    String retrieveCIN = dataSnapshot.child("CIN").getValue().toString();
+
+                    userNom.setText(retrieveUserNom);
+                    userPrenom.setText(retrieveUserPrenom);
+                    userAge.setText(retrieveAge);
+                    CINValue.setText(retrieveCIN);
+
+                }
+                else{
+                    Toast.makeText(SettingsActivity.this, "Veuillez Compléter votre profil!", Toast.LENGTH_SHORT).show();
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+        RootRef.child("Utilisateurs").child("Passagers").child("Etudiants").child(currentUserID).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if ((dataSnapshot.exists()) && (dataSnapshot.hasChild("nom"))){
+                    String retrieveUserNom = dataSnapshot.child("nom").getValue().toString();
+                    String retrieveUserPrenom = dataSnapshot.child("prenom").getValue().toString();
+                    String retrieveAge = dataSnapshot.child("age").getValue().toString();
+                    String retrieveCIN = dataSnapshot.child("CIN").getValue().toString();
+
+                    userNom.setText(retrieveUserNom);
+                    userPrenom.setText(retrieveUserPrenom);
+                    userAge.setText(retrieveAge);
+                    CINValue.setText(retrieveCIN);
+
+                }
+                else{
+                    Toast.makeText(SettingsActivity.this, "Veuillez Compléter votre profil!", Toast.LENGTH_SHORT).show();
 
                 }
             }
@@ -89,40 +148,116 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     private void UpdateSettings() {
-        String setNom = userNom.getText().toString();
-        String setPrenom = userPrenom.getText().toString();
-        String setAge = userAge.getText().toString();
-        String setSpinner = userCycle.getSelectedItem().toString();
-        if(TextUtils.isEmpty(setNom)){
-            Toast.makeText(this, "Please Enter your username", Toast.LENGTH_LONG).show();
-        }
+        final HashMap<String,Object> profileMap = new HashMap<>();
+        final String setNom = userNom.getText().toString();
+        final String setPrenom = userPrenom.getText().toString();
+        final String setAge = userAge.getText().toString();
+        final String setCIN = CINValue.getText().toString();
+        profileMap.put("uid",currentUserID);
+        profileMap.put("nom",setNom);
+        profileMap.put("prenom",setPrenom);
+        profileMap.put("age",setAge);
+        profileMap.put("CIN",setCIN);
 
-        else{
-            HashMap<String,Object> profileMap = new HashMap<>();
-            profileMap.put("uid",currentUserID);
-            profileMap.put("nom",setNom);
-            profileMap.put("prenom",setPrenom);
-            profileMap.put("age",setAge);
-            profileMap.put("cycle",setSpinner);
-            RootRef.child("Etudiants").child(currentUserID).setValue(profileMap)
-                    .addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            if(task.isSuccessful()){
-                                Toast.makeText(SettingsActivity.this, "Profile updated Successfully", Toast.LENGTH_SHORT).show();
-                                SendUserToPrincipalActivity();
-                            }
-                            else{
-                                String message = task.getException().toString();
-                                Toast.makeText(SettingsActivity.this, "Error: "+ message, Toast.LENGTH_LONG).show();
-                            }
-                        }
-                    });
+        if((TextUtils.isEmpty(setNom)) || (TextUtils.isEmpty(setPrenom))){
+            Toast.makeText(this, "Entrez votre nom complet, svp!", Toast.LENGTH_LONG).show();
+        }else if (TextUtils.isEmpty(setCIN)){
+            Toast.makeText(this, "Entrez votre CIN, svp!", Toast.LENGTH_LONG).show();
+        }else{
+            RootRef.child("Users").child(currentUserID).child("Occupation").addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    if (dataSnapshot.getValue().equals("Chauffeur")){
+
+                        RootRef.child("Utilisateurs").child("Chauffeurs").child(currentUserID).setValue(profileMap)
+                                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if(task.isSuccessful()){
+                                            Toast.makeText(SettingsActivity.this, "Profil a été bien mis à jour", Toast.LENGTH_SHORT).show();
+                                            SendUserToPrincipalActivity();
+                                        }
+                                        else{
+                                            String message = task.getException().toString();
+                                            Toast.makeText(SettingsActivity.this, "Erreur: "+ message, Toast.LENGTH_LONG).show();
+                                        }
+                                    }
+                                });
+
+                    }
+                    else if(dataSnapshot.getValue().equals("Etudiant")){
+
+                        RootRef.child("Utilisateurs").child("Passagers").child("Etudiants").child(currentUserID).setValue(profileMap)
+                                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if(task.isSuccessful()){
+                                            Toast.makeText(SettingsActivity.this, "Profil a été bien mis à jour", Toast.LENGTH_SHORT).show();
+                                            SendUserToPrincipalActivity();
+                                        }
+                                        else{
+                                            String message = task.getException().toString();
+                                            Toast.makeText(SettingsActivity.this, "Error: "+ message, Toast.LENGTH_LONG).show();
+                                        }
+                                    }
+                                });
+                    }
+                    else if(dataSnapshot.getValue().equals("Fonctionnaire")){
+                        RootRef.child("Utilisateurs").child("Passagers").child("Fonctionnaires").child(currentUserID).setValue(profileMap)
+                                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if(task.isSuccessful()){
+                                            Toast.makeText(SettingsActivity.this, "Profil a été bien mis à jour", Toast.LENGTH_SHORT).show();
+                                            SendUserToPrincipalActivity();
+                                        }
+                                        else{
+                                            String message = task.getException().toString();
+                                            Toast.makeText(SettingsActivity.this, "Erreur: "+ message, Toast.LENGTH_LONG).show();
+                                        }
+                                    }
+                                });
+                    }
+                    else{
+                        Toast.makeText(SettingsActivity.this, "Veuillez Compléter votre profil!", Toast.LENGTH_SHORT).show();
+
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+
         }
+    }
+
+    private void setStatut(){
+        RootRef.child("Users").child(currentUserID).child("Occupation").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.getValue().equals("Chauffeur")){
+                    statutView.setText("Chauffeur");
+                }
+                else if(dataSnapshot.getValue().equals("Etudiant")){
+                    statutView.setText("Etudiant");
+                }
+                else if(dataSnapshot.getValue().equals("Fonctionnaire")){
+                    statutView.setText("Fonctionnaire");
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
     private void SendUserToPrincipalActivity() {
-        Intent principalIntent = new Intent(SettingsActivity.this,MainActivity.class);
+        Intent principalIntent = new Intent(SettingsActivity.this,PrincipalActivity.class);
         startActivity(principalIntent);
     }
+
+
 }

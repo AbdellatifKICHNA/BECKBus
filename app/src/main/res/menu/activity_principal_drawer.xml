@@ -32,19 +32,10 @@
             android:id="@+id/reserve"
             android:icon="@drawable/reserve"
             android:title="Réservation de bus" />
+        <item
+            android:id="@+id/reclamation"
+            android:icon="@drawable/reclamation"
+            android:title="Réclamations" />
     </group>
-
-    <item android:title="Communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
-        </menu>
-    </item>
 
 </menu>
