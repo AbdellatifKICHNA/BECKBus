@@ -189,22 +189,28 @@ public class AbonnementActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String jour = dateRDV.getText().toString();
                 if(box1.isChecked() || box2.isChecked() || box3.isChecked() || box4.isChecked() || box5.isChecked() || box6.isChecked() || box7.isChecked()){
-                    allBoxes.setVisibility(View.INVISIBLE);
-                    textMowadaf.setVisibility(View.INVISIBLE);
-                    textTalib.setVisibility(View.INVISIBLE);
-                    prixTotal.setVisibility(View.INVISIBLE);
-                    prix.setVisibility(View.INVISIBLE);
-                    dhs.setVisibility(View.INVISIBLE);
-                    boxAccepter.setVisibility(View.INVISIBLE);
-                    conditions.setVisibility(View.INVISIBLE);
-                    rdvBtn.setVisibility(View.INVISIBLE);
-                    date.setVisibility(View.INVISIBLE);
-                    textRDV.setVisibility(View.VISIBLE);
-                    dateRDV.setVisibility(View.VISIBLE);
-                    RootRef.child("Rendez-Vous").child(jour).child("CIN").setValue(CINPassager);
-                    RootRef.child("Abonnements").child(CINPassager).setValue("false");
+                    if(date.getText().toString().equals("Choisir une date")){
+                        Toast.makeText(AbonnementActivity.this, "Veuillez choisir une date !", Toast.LENGTH_SHORT).show();
+                    }else{
+                        allBoxes.setVisibility(View.INVISIBLE);
+                        textMowadaf.setVisibility(View.INVISIBLE);
+                        textTalib.setVisibility(View.INVISIBLE);
+                        prixTotal.setVisibility(View.INVISIBLE);
+                        prix.setVisibility(View.INVISIBLE);
+                        dhs.setVisibility(View.INVISIBLE);
+                        boxAccepter.setVisibility(View.INVISIBLE);
+                        conditions.setVisibility(View.INVISIBLE);
+                        rdvBtn.setVisibility(View.INVISIBLE);
+                        date.setVisibility(View.INVISIBLE);
+                        textRDV.setVisibility(View.VISIBLE);
+                        dateRDV.setVisibility(View.VISIBLE);
+                        ImageQR.setVisibility(View.INVISIBLE);
+                        RootRef.child("Rendez-Vous").child(jour).child("CIN").setValue(CINPassager);
+                        RootRef.child("Abonnements").child(CINPassager).setValue("false");
+                    }
+
                 }else{
-                    Toast.makeText(AbonnementActivity.this, "Veuillez hoisir une ligne !", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AbonnementActivity.this, "Veuillez choisir une ligne !", Toast.LENGTH_SHORT).show();
                 }
             }
         });

@@ -49,9 +49,30 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Mon profil</string>
     <string name="action_logout">Déconnexion</string>
-    <string name="info_text">BECK Bus© est une compagnie de bus marocaine créée en 2018 spécialisée dans le transport de voyageurs au niveau de la région \nBéni Mellal - Khénifra.</string>
-    <string name="abonnement_talib">L\'abonnement \'Talib\' vous permet de voyager de façon illimitée en ne payant que 80Dhs/Ligne.</string>
     <string name="abonnement_mowadaf">L\'abonnement \'Mowadaf\' vous permet de voyager de façon illimitée en ne payant que 100Dhs/Ligne.</string>
     <string name="texte_rdv">Votre Rendez-Vous est programmé le :</string>
     <string name="facultes">Facultés</string>
+    <string name="infra_text"> Tous les voyageurs doivent être munis d’un titre de transport valable</string>
+    <string name="infra2_text"> Les voyageurs bénéficiant de réduction ou de gratuité, doivent être munis d’un titre de transport valable
+</string>
+    <string name="infra3_text"> Le voyageur est tenu de présenter un titre de transport valable à toute demande des controleurs de BECK Bus.
+</string>
+    <string name="infra4_text">Les places assises sont réservées par ordre de priorité aux personnes suivantes:\n
+-> Mutilés de guerre et mutilés militaires\n
+-> Aveugles civils\n
+-> Femmes enceintes\n
+-> Personnes âgées de 75 ans et plus
+    </string>
+    <string name="abonnement_talib">L\'abonnement \'Talib\' vous permet de voyager de façon illimitée en ne payant que 80Dhs/Ligne.</string>
+
+    <string name="info_text">BECK Bus© est une compagnie de bus marocaine créée en 2018 spécialisée dans le transport de voyageurs au niveau de la région \nBéni Mellal - Khénifra.</string>
+
+    <string name="infra5_text">La personne en situation irrégulière a la possibilité de régler immédiatement à tout agent de contrôle de Beck Bus une indemnité forfaitaire de 50DHS</string>
+    <string name="infra6_text"> ->Absence de titre de transport\n
+-> Violation de l\'interdiction de fumer\n
+-> Utilisation d une carte par une personne autre que le              titulaire\n
+-> Titre défectueux (déchiré)
+
+</string>
+    <string name="title_activity_maps">Map</string>
 </resources>
