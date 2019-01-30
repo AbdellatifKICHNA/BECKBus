@@ -48,6 +48,14 @@
             android:name=".TarifsActivity"
             android:label="Tarifs" />
         <activity android:name=".InformationsActivity" />
+        <activity android:name=".infractions"
+            android:label="Infractions" />
+
+        <activity android:name=".activity_agences"
+            android:label="Agence" />
+
+        <activity android:name=".activity_beckbusinfo"
+            android:label="A propos de BeckBus" />
         <activity
             android:name=".AbonnementActivity"
             android:label="Espace abonnements" />
@@ -61,6 +69,24 @@
             android:label="Réclamations" />
         <activity android:name=".MainActivity"
             android:windowSoftInputMode="stateHidden"></activity>
+
+        <activity android:name=".banque"
+            android:label="Banques" />
+
+        <activity android:name=".faculte"
+            android:label="Facultés" />
+
+        <activity android:name=".gare"
+            android:label="Gares" />
+
+        <activity android:name=".hopital"
+            android:label="Hopitaux" />
+
+        <activity android:name=".ofppt"
+            android:label="Ofppt" />
+
+        <activity android:name=".province"
+            android:label="Province" />
     </application>
 
 </manifest>
